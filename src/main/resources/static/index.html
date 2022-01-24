@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="demo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+          crossorigin="anonymous">
+
+    <title>AuthorBligPost</title>
+</head>
+
+<body>
+
+
+<div class="author">
+
+    <h1 style="text-align: center; color: brown;">Author Details</h1>
+
+
+
+<!--    <div id="btn1">-->
+<!--        <button id="doAdd" class="editForm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn-prop">Add Author</button>-->
+<!--    </div>-->
+
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid" id="btn1">
+
+            <button id="doAdd" class="editForm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn-prop">Add Author</button>
+<!--            <form class="d-flex">-->
+<!--                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <button class="btn btn-success" type="submit">Search</button>-->
+<!--            </form>-->
+        </div>
+    </nav>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Author Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body" id="newform">
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">First Name</lable>
+                        <input type="text" name="authorFname" autocomplete="off" id="authorFname" class="form-control"
+                               placeholder="Enter Your  First Name">
+                    </div>
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Last Name </lable>
+                        <input type="text" name="authorLname" autocomplete="off" id="authorLname" class="form-control"
+                               placeholder="Enter Your Last Name">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Email </lable>
+                        <input type="text" name="authorEmail" autocomplete="off" id="authorEmail" class="form-control"
+                               placeholder="Enter Your Email">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Language </lable>
+                        <input type="text" name="authorLanguage" autocomplete="off" id="authorLanguage" class="form-control"
+                               placeholder="Enter Your Language">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Bio </lable>
+                        <textarea class="form-control" autocomplete="off" class="form-control"
+                                  id="authorBio" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancel</button>
+                    <button type="button" class="btn btn-primary" id="add" data-bs-dismiss="modal" >Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--update Author-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="second_form" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" >Update Author</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body" id="updateform">
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">First Name</lable>
+                        <input type="text" name="update_authorFname" autocomplete="off" id="update_authorFname" class="form-control"
+                               placeholder="Enter Your  First Name">
+                    </div>
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Last Name </lable>
+                        <input type="text" name="update_authorLname" autocomplete="off" id="update_authorLname" class="form-control"
+                               placeholder="Enter Your Last Name">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Email </lable>
+                        <input type="text" name="update_authorEmail" autocomplete="off" id="update_authorEmail" class="form-control"
+                               placeholder="Enter Your Email">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Language </lable>
+                        <input type="text" name="update_authorLanguage" autocomplete="off" id="update_authorLanguage" class="form-control"
+                               placeholder="Enter Your Language">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Bio </lable>
+                        <textarea class="form-control" autocomplete="off" class="form-control"
+                                  id="update_authorBio" rows="3"></textarea>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="hidden" class="form-control" id="a_id">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancel</button>
+                    <button type="button" class="btn btn-primary" id="update" data-bs-dismiss="modal" >update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!--table-->
+
+    <table id="table">
+
+    </table>
+</div>
+
+
+<div id="showblogPost">
+
+    <h1 class="mt-5" style="text-align: center; color: brown;">BlogPost Details</h1>
+
+    <!--Author details-->
+    <div id="author">
+
+    </div>
+
+
+    <div id="btn2">
+        <button id="addBlogPost" class="bg-primary editForm" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" class="btn-prop">Add BlogPost</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" >BlogPost Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="BlogPostform">
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Title </lable>
+                        <input type="text" name="blogTitle" id="blogTitle" class="form-control"
+                               placeholder="Enter Your Blog Title">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Date </lable>
+                        <input type="date" name="blogDate" id="blogDate" class="form-control"
+                               placeholder="Enter Your Blog Date">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Content </lable>
+                        <select class="form-select" name="blogContent" id="blogContent">
+                            <option selected>Choosed Option</option>
+                            <option value="UNDEFINED">UNDEFINED</option>
+                            <option value="WRITING">WRITING</option>
+                            <option value="PUBLISHED">PUBLISHED</option>
+                            <option value="OPEN_FOR_COMMENT">OPEN_FOR_COMMENT</option>
+                            <option value="CLOSE">CLOSE</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="add1" data-bs-dismiss="modal" >Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--update BlogPost-->
+
+    <div class="modal fade" id="second_form1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Update BlogPost</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body" id="updateBlogPost">
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Title </lable>
+                        <input type="text" name="update_blogTitle" id="update_blogTitle" class="form-control"
+                               placeholder="Enter Your Blog Title">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">Date </lable>
+                        <input type="date" name="update_blogDate" id="update_blogDate" class="form-control"
+                               placeholder="Enter Your Blog Date">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <lable style="font-weight: bold">BlogContent </lable>
+                        <select class="form-select" name="update_blogContent" id="update_blogContent">
+                            <option selected>Choosed Option</option>
+                            <option value="UNDEFINED">UNDEFINED</option>
+                            <option value="WRITING">WRITING</option>
+                            <option value="PUBLISHED">PUBLISHED</option>
+                            <option value="OPEN_FOR_COMMENT">OPEN_FOR_COMMENT</option>
+                            <option value="CLOSE">CLOSE</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="hidden" class="form-control" id="b_id">
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="update1" data-bs-dismiss="modal" >update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--table-->
+
+    <table id="table1">
+
+    </table>
+
+
+    <div>
+        <input type="button" class="btn btn-success" id="viewMaster" value="Return">
+    </div>
+
+</div>
+
+
+
+
+<!--scripts-->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="application.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+
+</html>

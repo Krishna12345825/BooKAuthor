@@ -1,0 +1,18 @@
+.navbar{
+    color: brown;
+    text-align: -webkit-center;
+}
+table {
+    font-family: arial, sans-serif;
+    width: 100%;
+}
+td,th{
+    border: 1px solid #ffff;
+    text-align: left;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*.author{*/
+/*    display:block;*/
+/*}*/
